@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "lib": ["es2020"],
+    "types": ["node"],
+    "removeComments": true,
+    "esModuleInterop": true,
+    "outDir": "../js",
+    "moduleResolution": "node",
+    "inlineSourceMap": true
+  }
+}

@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  suudoku:
+    container_name: oneLinerAnalysisOfSudokuSolver
+    build: ./
+    volumes:
+      - ./ts:/root/ts
+      - ./js:/root/js
+      - ./node_modules:/root/node_modules

@@ -1,0 +1,72 @@
+{
+  "name": "suudoku",
+  "version": "0.0.0",
+  "scripts": {
+    "deleteJs": "rm -rf /root/js/*",
+    "prebuild": "npm run deleteJs",
+    "build": "cd ./ts && tsc",
+    "watch": "node js/watch/index.js",
+    "predebug": "npm run build",
+    "debug": "node js/test/debug.js",
+    "pretest": "npm run build",
+    "test": "node js/test/index.js",
+    "predev-start": "npm run build",
+    "dev-start": "npm run watch",
+    "preoutput": "npm run build",
+    "output": "node js/src/output.js",
+    "local_output": "SUDOKU_FILE_PATH=sudoku npm run output",
+    "format-check": "prettier --check .",
+    "format-write": "prettier --write ."
+  },
+  "dependencies": {
+    "@types/node": "^14.0.14",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "source-map-support": "^0.5.19",
+    "typescript": "^4.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "printWidth": 90,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "as-needed",
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "overrides": [
+      {
+        "files": "*.ts",
+        "options": {
+          "parser": "typescript"
+        }
+      },
+      {
+        "files": "*.json",
+        "options": {
+          "parser": "json"
+        }
+      },
+      {
+        "files": "*.yml",
+        "options": {
+          "parser": "yaml"
+        }
+      },
+      {
+        "files": "*.md",
+        "options": {
+          "parser": "markdown"
+        }
+      }
+    ]
+  }
+}
