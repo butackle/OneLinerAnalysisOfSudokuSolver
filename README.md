@@ -63,4 +63,4 @@ https://github.com/ryuichiueda/ShellGeiData/commit/64ea9581686bff2e07a574de1b23c
 
 # LICENSE
 
-http://butackle.github.io/license/LICENSE.txt
+MIT
